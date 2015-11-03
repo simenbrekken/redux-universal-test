@@ -1,0 +1,7 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "block-spacing": [2, "always"],
+    "object-curly-spacing": [2, "always"]
+  }
+}
