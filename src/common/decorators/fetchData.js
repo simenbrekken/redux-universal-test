@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import PureComponent from 'react-pure-render/component';
+import { connect } from 'react-redux';
 
 import { getDisplayName } from '../utils';
 
@@ -30,6 +31,6 @@ export default function(fetch) {
     FetchData.displayName = `FetchData(${getDisplayName(WrappedComponent)})`;
     FetchData.WrappedComponent = WrappedComponent;
 
-    return FetchData;
+    return connect()(FetchData);
   };
 }
