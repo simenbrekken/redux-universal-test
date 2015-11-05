@@ -4,7 +4,7 @@ import PureComponent from 'react-pure-render/component';
 import { getDisplayName } from '../utils';
 
 function getComponentRequiredProps({ propTypes }) {
-  return Object.keys(propTypes).filter(key => propTypes[key].isRequired);
+  return Object.keys(propTypes).filter(key => !propTypes[key].isRequired);
 }
 
 export default function(LoaderComponent = null, ownRequiredProps) {
