@@ -19,7 +19,7 @@ function mapStateToProps({ categories }) {
 })
 export default class FrontpageContainer extends Component {
   static propTypes = {
-    childCategories: PropTypes.arrayOf(PropTypes.category),
+    childCategories: PropTypes.arrayOf(PropTypes.category).isRequired,
   }
 
   render() {

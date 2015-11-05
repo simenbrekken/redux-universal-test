@@ -9,7 +9,7 @@ const initialState = {
 function categoriesReducer(state = initialState, action) {
   switch (action.type) {
   case 'FETCH_CATEGORIES':
-    return { ...state, isFetching: true };
+    return { ...initialState, isFetching: true };
   case 'FETCH_CATEGORIES_FAILED':
     return { ...state, isFetching: false, error: action.error };
   case 'FETCH_CATEGORIES_COMPLETED':
