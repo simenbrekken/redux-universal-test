@@ -1,10 +1,15 @@
 const port = process.env.PORT || 3000;
+const baseUrl = process.env.API_URL || `http://localhost:${port}/api`;
+
+function callApi(url) {
+  return fetch(baseUrl + url);
+}
 
 export function fetchCategories() {
   return dispatch => {
     dispatch({ type: 'FETCH_CATEGORIES' });
 
-    return fetch(`http://localhost:${port}/api/categories`)
+    return callApi('/categories')
       .then(res => res.json())
       .then(payload => dispatch({ type: 'FETCH_CATEGORIES_COMPLETED', payload }))
       .catch(err => {

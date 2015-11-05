@@ -11,7 +11,12 @@ const config = {
     filename: 'bundle.js',
   },
   plugins: [
-    new webpack.EnvironmentPlugin('NODE_ENV'),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify(env),
+        API_URL: JSON.stringify('/api'),
+      },
+    }),
   ],
   module: {
     loaders: [{
