@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Metadata from './Metadata';
+
 const style = {
   fontFamily: 'sans-serif',
 };
@@ -7,6 +9,7 @@ const style = {
 export default function Application({ children }) {
   return (
     <div style={style}>
+      <Metadata title="Redux Universal Test" />
       <h1>Redux Universal Test</h1>
 
       {children}

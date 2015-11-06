@@ -8,6 +8,7 @@ import { createMemoryHistory } from 'history';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import { reduxReactRouter, match } from 'redux-router/server';
 
+import Metadata from '../common/components/Metadata';
 import Page from '../common/components/Page';
 import api from './api';
 import createStore from '../common/store';
@@ -43,8 +44,9 @@ app.use((req, res, next) => {
           );
 
           const state = store.getState();
+          const metadata = Metadata.rewind();
           const page = renderToStaticMarkup(
-            <Page state={state}>{application}</Page>
+            <Page state={state} metadata={metadata}>{application}</Page>
           );
 
           res.send('<!doctype html>' + page);

@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'react-router/lib/Link';
 
+import Metadata from './Metadata';
 import Navigation from './Navigation';
 import PropTypes from '../constants/PropTypes';
 
@@ -14,6 +15,8 @@ export default function Category({ category, childCategories, parentCategory: { 
 
   return (
     <div>
+      <Metadata title={category.name} />
+
       <h2>
         <Link to={href}>{label}</Link> / {category.name}
       </h2>

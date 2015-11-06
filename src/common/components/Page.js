@@ -10,11 +10,11 @@ function initialState(state) {
   }
 }
 
-export default function Page({ children, state }) {
+export default function Page({ children, state, metadata: { title } }) {
   return (
     <html>
       <head>
-        <title>React Universal Test</title>
+        <title>{title}</title>
       </head>
 
       <body>
