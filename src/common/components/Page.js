@@ -10,7 +10,7 @@ function initialState(state) {
   }
 }
 
-export default function Page({ children, state, metadata: { title } }) {
+export default function Page({ children, state, metadata: { title } = {} }) {
   return (
     <html>
       <head>

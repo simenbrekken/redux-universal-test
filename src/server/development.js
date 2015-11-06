@@ -5,9 +5,9 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import devMiddleware from 'webpack-dev-middleware';
 import hotMiddleware from 'webpack-hot-middleware';
 
+import Page from '../common/components/Page';
 import api from './api';
 import config, { publicPath } from '../../webpack.config';
-import Page from '../common/components/Page';
 
 const port = process.env.PORT || 3000;
 const app = express();
